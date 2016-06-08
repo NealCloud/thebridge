@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>three.js particle tutorial</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">
+			body {
+				background-color: #808864;
+				margin: 0px;				
+			}
+            #topper{
+                width: 500px;
+                height: 500px;
+/*                background-color: rgba(0,0,15,1);*/
+            }
+            .longo{
+                width: 200px;
+                height: 5000px;
+            }
+		</style>
+		
+	</head>
+	<body>
+        <div id='topper'></div>
+        
+        <svg version="1.1" id='celt' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px"
+	 height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+
+<g id="bknot1">
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M34.375,34.375
+			C30.75,35,27.25,30.125,25,25"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M53.125,34.375
+			c0-5.75,5.25-9,9.625-9.375"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M53.125,53.125
+			c3.125,0,8.427,5.545,9.677,10.42"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M34.375,53.125
+			c0,4.625-4.625,7.5-9.5,9.5"/>
+	</g>
+</g>
+<g id="bknot2">
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M43.75,25
+			c1.108-2.919,5.625-8.375,9.375-9.375s15.875-2.875,18.75,0s0.728,15.713,0,18.75"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M62.625,43.875
+			c3.125,0,8.25,7.125,9.25,9.25s0.25,16.625,0,18.75s-17.75,0.125-18.75,0"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M43.625,62.625
+			c-2.079,2.333-5.5,6.125-9.25,9.25c-3.531,2.942-15.843,2.623-18.75,0c-2.979-2.688-1.25-15,0-18.75"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M34.375,15.625
+			c-2-1.25-16.75-4-18.75,0s-2.558,16.957,0,18.75s4,9.875,9.25,9.5"/>
+	</g>
+</g>
+<g id="bknot3">
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M25,25
+			c1.75-4.125,5.25-6.625,9.375-9.375s16.75-1.25,18.75,0"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M62.75,25
+			c3.75,0.5,8.125,4.25,9.125,9.375s3,14.375,0,18.75"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M62.753,63.11
+			c0.622,4.14-4.878,6.765-9.628,8.765s-16,1.485-18.75,0"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M24.875,62.625
+			c-3.313-0.813-5.909-3.833-9.25-9.5c-3.5-5.938-2.625-15.25,0-18.75"/>
+	</g>
+</g>
+<g id="bknot4">
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M43.75,25
+			c2.375,0.625,9,7.875,9.375,9.375s-7.278,7.304-9.5,9.5c-0.907,0.896-6.75-9.625-9.25-9.5s-9.5,6.375-9.5,9.5"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M43.625,43.875
+			c1.875,0.542,7.958,10.126,9.5,9.25c2.706-1.537,9.25-4.875,9.5-9.25"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M43.625,62.625
+			c-1.625-4.264-4.938-7.563-9.25-9.5c-2.852-1.281,6.875-9.5,9.25-9.25"/>
+	</g>
+</g>
+<g id="bknot5">
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M34.375,34.375
+			c0.875-4.125,8.375-9.5,9.375-9.375"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M24.875,43.875
+			c3.125,2.75,3.75,7.375,9.5,9.25"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M43.625,62.625
+			c3.125,0,7.875-5.5,9.5-9.5"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" d="M62.625,43.875
+			c0.5-2.25-6.506-8.602-9.5-9.5"/>
+	</g>
+</g>
+</svg>
+        <div class='longo'></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="vendor/three.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<!--        <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r48/Three.js'></script>-->
+
+		<script>
+	
+    var camera, scene, renderer, mouseX = 0,
+        mouseY = 0,
+        particles = [];
+    initStars();
+
+    function initStars() {
+        var stars = $("#topper");
+        camera = new THREE.PerspectiveCamera(80, stars.width() / stars.height(), 1, 4000);
+        camera.position.z = 1000;
+        scene = new THREE.Scene();
+        scene.add(camera);
+        renderer = new THREE.CanvasRenderer();
+        renderer.setSize(stars.width(), stars.height());
+        stars.append(renderer.domElement);
+        makeParticles();
+        document.addEventListener('mousemove', onMouseMove, false);
+        setInterval(update, 1000 / 30);
+    }          
+
+ 
+	
+            
+    function update() {
+        updateParticles();
+        renderer.render(scene, camera);
+    }
+
+    function makeParticles() {
+        var particle, material;
+        for (var zpos = -1000; zpos < 1000; zpos += 5) {
+            material = new THREE.ParticleCanvasMaterial({
+                color: 0x81dbeb,
+                program: particleRender
+            });
+            particle = new THREE.Particle(material);
+            particle.position.x = Math.random() * 1000 - 500;
+            particle.position.y = Math.random() * 1000 - 500;
+            particle.position.z = zpos;
+            particle.scale.x = particle.scale.y = 1;
+            scene.add(particle);
+            particles.push(particle);
+        }
+    }
+
+    function particleRender(context) {
+        context.beginPath();
+        context.arc(0, 0, 1, 0, Math.PI * 2, true);
+        context.fill();
+    };
+
+    function updateParticles() {
+        for (var i = 0; i < particles.length; i++) {
+            particle = particles[i];
+            particle.position.z += mouseY * 0.1;
+            if (particle.position.z > 1000) particle.position.z -= 2000;
+        }
+    }
+		
+		// called when the mouse moves
+			function onMouseMove( event ) {
+				// store the mouseX and mouseY position 
+				mouseX = event.clientX;
+				mouseY = event.clientY;
+			}
+            
+            function pathPrepare($el){
+                var lineLength = $el[0].getTotalLength();
+                console.log(lineLength, $el);
+                $el.css("stroke-dasharray", lineLength);
+                $el.css('stroke-dashoffset', lineLength);
+                
+            }
+            
+            
+            
+            for(var i = 1; i < 6; i++){
+                var yo = $("#bknot" + i).find('path');
+                yo.each(function(e){
+                   
+                   pathPrepare($(this));
+                    });
+            }
+            
+            var controller = new ScrollMagic.Controller();
+            
+            var tween = new TimelineMax();
+            
+            for(var i = 1; i < 6; i++){
+               var bo = $("#bknot" + i).find('path');
+                bo.each(function(e){
+                tween.add(TweenLite.to(this, 1.9, {strokeDashoffset: 0, ease:Linear.easeNone}));  
+                })
+         
+            }
+            
+            var scene = new ScrollMagic.Scene({triggerElement: "#celt", duration: 200, tweenChanges: true})
+            .setTween(tween)          
+            .addTo(controller);
+            
+              
+		</script>
+	</body>
+</html>
+
