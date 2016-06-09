@@ -116,7 +116,7 @@
 </svg>
         <div class='longo'></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-		<script src="vendor/three.js"></script>
+		<script src="js/vendor/three.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
@@ -215,14 +215,15 @@
             
             for(var i = 1; i < 6; i++){
                var bo = $("#bknot" + i).find('path');
+                var boarry = [];
                 bo.each(function(e){
-                tween.add(TweenLite.to(this, 1.9, {strokeDashoffset: 0, ease:Linear.easeNone}));  
+                boarry.push(this);
                 })
-         
+                tween.to(boarry, 0.5, {strokeDashoffset: 0, ease:Linear.easeNone});
             }
             
-            var scene = new ScrollMagic.Scene({triggerElement: "#celt", duration: 200, tweenChanges: true})
-            .setTween(tween)          
+            var cosmic = new ScrollMagic.Scene({triggerElement: "#celt", duration: 100, tweenChanges: true})
+            .setTween(tween)
             .addTo(controller);
             
               
